@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-for num in range(100):
-    if num < 99:
-     print(f"{num:02d}, ", end='') #prints 2 digit numbers 
-else:
-    print(f"{num:02d}")
+for decimal in range(0, 100):
+    if decimal == 99:
+        print("{}".format(decimal))
+        break
+    print("{:02d}, ".format(decimal), end="")
