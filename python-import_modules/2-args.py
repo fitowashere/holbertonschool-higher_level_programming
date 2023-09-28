@@ -2,14 +2,13 @@
 if __name__ == "__main__":
     import sys
 
-arguments = sys.argv[1:] #argv
-num_arguments = len(arguments) #argc
+arguments = sys.argv[1:]#argv
+num_arguments = len(arguments)#argc
 
-#print(num_arguments, "argument(s):", end="")
 if num_arguments >= 1:
     print(num_arguments, "arguments:", end="")
 if num_arguments == 0:
-    print(num_arguments, "arguments.", end="\n")
+    print(num_arguments, "argument.", end="\n")
 else:
     print("")
 
