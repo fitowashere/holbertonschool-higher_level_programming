@@ -7,7 +7,7 @@ num_arguments = len(arguments) #argc
 
 #print(num_arguments, "argument(s):", end="")
 if num_arguments >= 1:
-    print(num_arguments, " argument:", end="")
+    print(num_arguments, "argument:", end="")
 if num_arguments == 0:
     print(num_arguments, "argument.", end="")
 else:
