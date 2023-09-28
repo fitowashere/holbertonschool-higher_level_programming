@@ -3,6 +3,7 @@ if __name__ == "__main__":
     import sys
     from calculator_1 import add, sub, mul, div
 
+
 def handle_operation(a, operator, b):
     if operator == '+':
         result = add(a, b)
@@ -17,6 +18,7 @@ def handle_operation(a, operator, b):
         sys.exit(1)
 
     print("{} {} {} = {}".format(a, operator, b, result))
+
 
 # Get the command-line arguments
 arguments = sys.argv[1:]
