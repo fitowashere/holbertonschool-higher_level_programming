@@ -9,7 +9,7 @@ num_arguments = len(arguments) #argc
 if num_arguments >= 1:
     print(num_arguments, " argument:", end="")
 if num_arguments == 0:
-    print(num_arguments, "argument.", end="\n\n")
+    print(num_arguments, "argument.", end="")
 else:
     print("")
 
