@@ -8,8 +8,4 @@ for digit1 in range(0, 9):
             print("{:02d}".format(digit1 * 10 + digit2), end=', ')
         else:
             print("{:02d}".format(digit1 * 10 + digit2), end='')
-                  
 
-
-# Print a newline character to end the output
-print()
