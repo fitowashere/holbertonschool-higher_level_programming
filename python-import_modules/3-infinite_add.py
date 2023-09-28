@@ -10,6 +10,6 @@ if arguments == 1:
 else:
     result = 0
     for i in range(1, arguments):
-     result += int(sys.argv[i])
+        result += int(sys.argv[i])
 
     print(result)
