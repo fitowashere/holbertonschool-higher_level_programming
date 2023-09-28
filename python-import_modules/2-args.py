@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+import sys
+
+arguments = sys.argv[1:] #argv
+num_arguments = len(arguments) #argc
+
+#print(num_arguments, "argument(s):", end="")
+if num_arguments >= 1:
+    print(num_arguments, " arguments:", end="")
+if num_arguments == 0:
+    print(num_arguments, "arguments.", end="\n\n")
+else:
+    print("")
+
+for i in range(0, num_arguments):
+   print("{}: {}".format(i+1, arguments[i]))
