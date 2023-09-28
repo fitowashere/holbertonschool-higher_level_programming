@@ -7,11 +7,11 @@ num_arguments = len(arguments) #argc
 
 #print(num_arguments, "argument(s):", end="")
 if num_arguments >= 1:
-    print(num_arguments, "argument:", end="")
+    print(num_arguments, "arguments:", end="")
 if num_arguments == 0:
-    print(num_arguments, "arguments.", end="\n\n")
+    print(num_arguments, "arguments.", end="\n")
 else:
     print("")
 
 for i in range(0, num_arguments):
-   print("{}: {}".format(i+1, arguments[i]))
+    print("{}: {}".format(i+1, arguments[i]))
