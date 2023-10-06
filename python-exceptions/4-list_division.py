@@ -4,17 +4,16 @@ def list_division(my_list_1, my_list_2, list_length):
     for i in range(list_length):
         try:
 
-            # Raise an IndexError if the index is out of range
+             # Raise an IndexError if the index is out of range
             if i >= len(my_list_1) or i >= len(my_list_2):
                 raise IndexError("out of range")
-
+            
             # Try to divide corresponding elements, if they exist
             num1 = my_list_1[i] if i < len(my_list_1) else 0
             num2 = my_list_2[i] if i < len(my_list_2) else 0
 
             # Check for division by 0 and wrong type
-            if not isinstance(num1, (int, float)) or \
-                 not isinstance(num2, (int, float)):
+            if not all(isinstance(num, (int, float)) for num in (num1, num2)):
                 raise TypeError("wrong type")
             if num2 == 0:
                 raise ZeroDivisionError("division by 0")
