@@ -8,7 +8,7 @@ class Node:
     def __init__(self, data, next_node=None):
         """
         Initializes a Node.
-        
+
         Parameters:
             data: The data of the node, must be an integer.
             next_node: The next node in the linked list.
@@ -25,7 +25,7 @@ class Node:
     def data(self, value):
         """
         Sets the data of the node.
-        
+
         Raises:
             TypeError: If data is not an integer.
         """
@@ -42,7 +42,7 @@ class Node:
     def next_node(self, value):
         """
         Sets the next node.
-        
+
         Raises:
             TypeError: If next_node is not a Node object or None.
         """
@@ -60,8 +60,9 @@ class SinglyLinkedList:
 
     def __str__(self):
         """
-        Returns a string representation of the linked list with one node per line.
-        
+        Returns a string representation of
+        the linked list with one node per line.
+
         Returns:
             A string containing all nodes in the linked list.
         """
@@ -74,8 +75,9 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """
-        Inserts a new Node into the correct sorted position in the list (increasing order).
-        
+        Inserts a new Node into the correct sorted
+        position in the list (increasing order).
+
         Parameters:
             value: The data of the new node to be inserted.
         """
