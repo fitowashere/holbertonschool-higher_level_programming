@@ -1,7 +1,10 @@
-#!/usr/bin/pythone3
-"""This module contains an empty class Square that defines a square"""
+#!/usr/bin/python3
+"""Write a class Square that defines a square by: (based on 0-square.py)"""
 
 
-class square:
+class Square:
+    """This class defines a square"""
+
     def __init__(self, size):
-        self._size = size
+        """Initializes the data"""
+        self.__size = size
