@@ -65,14 +65,14 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Prints the square with the character # using its position."""
+        """Returns a string representation of the square with the character # using its position."""
         if self.__size == 0:
-            print()
-            return
+            return "\n"
 
-        print("\n" * self.__position[1], end="")
+        result = "\n" * self.__position[1]
         for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+            result += " " * self.__position[0] + "#" * self.__size + "\n"
+        return result
 
     def __str__(self):
         """Overrides the default behavior when using print() with a Square object.
@@ -80,7 +80,4 @@ class Square:
         Returns:
             A string representation of the square, ready to be printed.
         """
-        from io import StringIO
-        buffer = StringIO()
-        print(self.my_print(), file=buffer)
-        return buffer.getvalue()
+        return self.my_print().rstrip()
