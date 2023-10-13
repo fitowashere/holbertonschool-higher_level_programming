@@ -18,6 +18,9 @@ class Test_max_integer(unittest.TestCase):
         self.assertEqual(max_integer([1, 1]), 1)
         self.assertRaises(TypeError, max_integer(["hello"]))
         self.assertRaises(TypeError, max_integer())
+        self.assertEqual(max_integer([1, 3, 2]), 3)
+        self.assertEqual(max_integer([-10, 0, -11]), 0)
+
 
 
 if __name__ == '__main__':
