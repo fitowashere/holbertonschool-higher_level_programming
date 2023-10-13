@@ -12,7 +12,7 @@ def text_indentation(text):
     """
     if type(text) is not str:
         raise TypeError('text must be a string')
-    
+
     skip_space = False
     # Add a flag to skip spaces after special characters
     for let in text:
@@ -27,4 +27,3 @@ def text_indentation(text):
             print(let, end="")
             skip_space = False
             # Disable the flag when non-space character is encountered
-
