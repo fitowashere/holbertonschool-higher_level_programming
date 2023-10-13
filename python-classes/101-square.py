@@ -65,7 +65,8 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Returns a string representation of the square with the character # using its position."""
+        """Returns a string representation of the square
+        with the character # using its position."""
         if self.__size == 0:
             return "\n"
 
@@ -75,7 +76,8 @@ class Square:
         return result
 
     def __str__(self):
-        """Overrides the default behavior when using print() with a Square object.
+        """Overrides the default behavior when using
+        print() with a Square object.
 
         Returns:
             A string representation of the square, ready to be printed.
