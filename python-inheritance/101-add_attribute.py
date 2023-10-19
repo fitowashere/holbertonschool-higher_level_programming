@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-""""adds attribute to object"""
+"""adds attribute to object"""
 
 
-def add_new_attribute(obj, attr, value):
+def add_attribute(obj, attr, value):
     """
     Adds a new attribute to an object if possible, otherwise raises a TypeError.
     """
