@@ -8,11 +8,11 @@ class MyList(list):
         """Print a list in sorted ascending order."""
         int_items = [item for item in self if isinstance(item, int)]
         non_int_items = [item for item in self if not isinstance(item, int)]
-        
+
         if non_int_items:
             print("Removed non-integer items:", non_int_items)
             for item in non_int_items:
                 self.remove(item)
-            
+
         sorted_list = sorted(int_items)
         print(sorted_list)
