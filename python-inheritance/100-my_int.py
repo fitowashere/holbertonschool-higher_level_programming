@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""checks for operators"""
+
+
 class MyInt(int):
     """MyInt class inherits from int and inverts the == and != operators."""
 
