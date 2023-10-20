@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """ triangle """
 
+
 def pascal_triangle(n):
+    """Generate Pascal's Triangle of height 'n'."""
+    
     # Check if n is less than or equal to 0
     if n <= 0:
         return []
