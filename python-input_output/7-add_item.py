@@ -13,4 +13,3 @@ except:
 for i in sys.argv[1:]:
     my_list.append(i)
     save_to_json_file(my_list, "add_item.json")
-    print("Arguments added to 'add_item.json'")
