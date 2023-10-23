@@ -91,4 +91,5 @@ class Rectangle(Base):
         """
         Return a string representation of the Rectangle instance.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.__width}/{self.__height}"
+        r = self
+        return f"[Rectangle] ({r.id}) {r.x}/{r.y} - {r.width}/{r.height}"
