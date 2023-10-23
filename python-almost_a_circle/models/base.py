@@ -21,7 +21,7 @@ class Base:
             # Assign the provided id to the public instance attribute id
             self.id = id
         else:
-            # Increment __nb_objects and 
+            # Increment __nb_objects and
             # assign it to the public instance attribute id
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
