@@ -19,7 +19,7 @@ class Square(Rectangle):
         # Call the constructor of the super class
         # (Rectangle) to handle id, x, y, width, and height
 
-  # Getter and setter methods for size
+    # Getter and setter methods for size
     @property
     def size(self):
         return self.width
