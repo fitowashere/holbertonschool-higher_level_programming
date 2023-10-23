@@ -96,7 +96,7 @@ class Rectangle(Base):
         r = self
         return f"[Rectangle] ({r.id}) {r.x}/{r.y} - {r.width}/{r.height}"
 
-    def update(self, *args,**kwargs):
+    def update(self, *args, **kwargs):
         """
         Update the attributes of the Rectangle instance with no-keyword
         arguments in the specified order.
