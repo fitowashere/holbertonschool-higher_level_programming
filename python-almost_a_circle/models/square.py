@@ -53,3 +53,14 @@ class Square(Rectangle):
             # Use **kwargs to update attributes
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Return a dictionary representation of the Square instance.
+        """
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
