@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """base module"""
 
-
+from os import path
 import json
 # models/base.py
 
