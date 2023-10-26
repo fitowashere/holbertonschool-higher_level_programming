@@ -5,6 +5,7 @@
 import json
 # models/base.py
 
+
 class Base:
     """
     This is the base class for your models.
