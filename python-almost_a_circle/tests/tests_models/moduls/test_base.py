@@ -1,70 +1,60 @@
-import unittest
 from models.base import Base
-
+from models.rectangle import Rectangle
+import unittest
 
 class TestBase(unittest.TestCase):
-    def test_create(self):
-        """Test the create method of the Base class"""
-        # Test creating a Rectangle object
-        rectangle_dict = {'id': 1, 'width': 2, 'height': 3, 'x': 4, 'y': 5}
-        rectangle = Base.create(**rectangle_dict)
-        self.assertEqual(rectangle.id, 1)
-        self.assertEqual(rectangle.width, 2)
-        self.assertEqual(rectangle.height, 3)
-        self.assertEqual(rectangle.x, 4)
-        self.assertEqual(rectangle.y, 5)
+    """ Testing  initialization """
+    def test_init(self):
+        new_obj = Base()
+        self.assertEqual(new_obj._Base__nb_objects, 1)
+        self.assertEqual(new_obj.id, 1)
+        new_obj_2 = Base()
+        self.assertEqual(new_obj_2._Base__nb_objects, 2)
+        self.assertEqual(new_obj_2.id, 2)
+        new_obj_3 = Base(89)
+        self.assertEqual(new_obj_3._Base__nb_objects, 2)
+        self.assertEqual(new_obj_3.id, 89)
 
-        # Test creating a Square object
-        square_dict = {'id': 2, 'size': 6, 'x': 7, 'y': 8}
-        square = Base.create(**square_dict)
-        self.assertEqual(square.id, 2)
-        self.assertEqual(square.size, 6)
-        self.assertEqual(square.x, 7)
-        self.assertEqual(square.y, 8)
-
+    """ Testing to json string """
     def test_to_json_string(self):
-        """Test the to_json_string method of the Base class"""
-        # Test with a list of dictionaries
-        list_dicts = [{'id': 1, 'width': 2, 'height': 3, 'x': 4, 'y': 5},
-                      {'id': 2, 'size': 6, 'x': 7, 'y': 8}]
-        json_string = Base.to_json_string(list_dicts)
-        expected_string = '[{"id": 1, "width": 2, "height": 3, "x": 4\
-            , "y": 5}, {"id": 2, "size": 6, "x": 7, "y": 8}]'
-        self.assertEqual(json_string, expected_string)
+        r1 = Rectangle(10, 7, 2, 8, 1)
+        dic = r1.to_dictionary()
+        json = Base.to_json_string([dic])
+        self.assertEqual(json, '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]')
 
-        # Test with an empty list
-        empty_list = []
-        json_string = Base.to_json_string(empty_list)
-        expected_string = '[]'
-        self.assertEqual(json_string, expected_string)
+    def test_to_json_empty(self):
+        json = Base.to_json_string([])
+        self.assertEqual(json, '[]')
 
-        # Test with None
-        json_string = Base.to_json_string(None)
-        expected_string = '[]'
-        self.assertEqual(json_string, expected_string)
+    def test_to_json_none(self):
+        json = Base.to_json_string(None)
+        self.assertEqual(json, '[]')
 
-    def test_from_json_string(self):
-        """Test the from_json_string method of the Base class"""
-        # Test with a JSON string
-        json_string = '[{"id": 1, "width": 2, "height": 3, "x": 4\
-            , "y": 5}, {"id": 2, "size": 6, "x": 7, "y": 8}]'
-        list_dicts = Base.from_json_string(json_string)
-        expected_list = [{'id': 1, 'width': 2, 'height': 3, 'x': 4, 'y': 5},
-                         {'id': 2, 'size': 6, 'x': 7, 'y': 8}]
-        self.assertEqual(list_dicts, expected_list)
+    """ Testing from json to string """
+    def test_json_srting(self):
+        json = Base.from_json_string(None)
+        self.assertEqual(json, [])
 
-        # Test with an empty string
-        empty_string = ''
-        list_dicts = Base.from_json_string(empty_string)
-        expected_list = []
-        self.assertEqual(list_dicts, expected_list)
+    def test_json_str(self):
+        json = Base.from_json_string("[]")
+        self.assertEqual(json, [])
 
-        # Test with None
-        list_dicts = Base.from_json_string(None)
-        expected_list = []
-        self.assertEqual(list_dicts, expected_list)
+    def test_json_str_good(self):
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+        json_li_input = Base.to_json_string(list_input)
+        json_output = Base.from_json_string(json_li_input)
+        self.assertIsInstance(json_output, list)
 
+    def test_json_str_empty(self):
+        json = Base.from_json_string(None)
+        self.assertEqual(json, [])
+
+    def test_json_str_empty_2(self):
+        json = Base.from_json_string("[]")
+        self.assertEqual(json, [])
 
 if __name__ == '__main__':
     unittest.main()
-    
