@@ -1,30 +1,27 @@
 #!/usr/bin/python3
-"""
-Script that lists all states from the databse hbtn_0e_0_usa
-"""
+"""Module to list all states from database hbtn_0e_0_usa"""
 import MySQLdb
-from sys import argv
+import sys
 
-if __name__ == '__main__':
-    u_name = argv[1]
-    psw = argv[2]
-    base = argv[3]
 
-    # Connecting to MySQL database
-    db = MySQLdb.connect(host="localhost", user=u_name,
-                         passwd=psw, db=base, port=3306)
+def main():
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-    # Creating cursor object
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=username, passwd=password, db=database)
     cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
 
-    # Executing MySql Query
-    cur.execute("SELECT * FROM states ORDER BY id")
-
-    # Obtaining Query Result & prints the result in rows
     rows = cur.fetchall()
     for row in rows:
         print(row)
 
-    # Clean Up
     cur.close()
     db.close()
+
+
+if __name__ == "__main__":
+    main()
+    
